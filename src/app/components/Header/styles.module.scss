@@ -1,0 +1,24 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem auto 0 auto;
+  width: 80vw;
+}
+
+.logo {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  span:first-child {
+    color: var(--heading-color);
+    font-weight: 500;
+  }
+
+  span:last-child {
+    color: var(--text-color);
+    font-weight: 300;
+  }
+}
