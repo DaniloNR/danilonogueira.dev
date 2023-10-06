@@ -1,0 +1,40 @@
+nav.navigation {
+  display: flex;
+  gap: 0.5rem;
+
+  a.link {
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: var(--heading-color);
+    transition: color 0.25s ease;
+
+    &:hover {
+      color: var(--highlight);
+    }
+
+    &::before {
+      content: "<";
+      opacity: 0;
+    }
+
+    &::after {
+      content: ">";
+      opacity: 0;
+    }
+
+    &.link--active {
+      color: var(--highlight);
+
+      &::before {
+        opacity: 1;
+      }
+
+      &::after {
+        opacity: 1;
+      }
+    }
+  }
+}
