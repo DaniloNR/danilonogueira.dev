@@ -6,11 +6,10 @@ import { useEffect, useState } from "react";
 type ThemeTypes = "LIGHT_THEME" | "DARK_THEME";
 
 function getDefaultTheme() {
-  if (localStorage.getItem("@web-dev-portfolio:theme-state-1.0.0") !== null) {
-    return localStorage.getItem(
-      "@web-dev-portfolio:theme-state-1.0.0"
-    ) as ThemeTypes;
-  }
+  const theme = window.localStorage.getItem(
+    "@web-dev-portfolio:theme-state-1.0.0"
+  );
+  if (theme) theme as ThemeTypes;
   if (
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
