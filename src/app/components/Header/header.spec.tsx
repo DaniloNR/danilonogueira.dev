@@ -1,15 +1,45 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { Navigation, NavigationLinks } from "../Navigation";
+import { usePathname } from "next/navigation";
 
-const links: NavigationLinks[] = [
-  {
-    name: "Home",
-    href: "/",
-  },
-];
+jest.mock("next/navigation", () => ({
+  usePathname: jest.fn(),
+}));
 
-test("Active link renders correctly", () => {
-  const { debug } = render(<Navigation navLinks={links} />);
+describe("Header component", () => {
+  it("Renders the active link accordingly", () => {
+    (usePathname as jest.Mock).mockReturnValue("/");
 
-  debug();
+    const links: NavigationLinks[] = [
+      {
+        name: "Home",
+        href: "/",
+      },
+    ];
+
+    render(<Navigation navLinks={links} />); // Arrange
+    const home = screen.getByText("Home"); // Act
+    expect(home).toHaveClass("link--active"); // Assert
+  });
+
+  it("Renders a different active link when route changes", () => {
+    (usePathname as jest.Mock).mockReturnValue("/career");
+
+    const links: NavigationLinks[] = [
+      {
+        name: "Home",
+        href: "/",
+      },
+      {
+        name: "Career",
+        href: "/career",
+      },
+    ];
+
+    render(<Navigation navLinks={links} />); // Arrange
+    const home = screen.getByText("Home"); // Act
+    const career = screen.getByText("Career"); // Act
+    expect(home).not.toHaveClass("link--active"); // Assert
+    expect(career).toHaveClass("link--active"); // Assert
+  });
 });
