@@ -9,7 +9,7 @@ function getDefaultTheme() {
   const theme = window.localStorage.getItem(
     "@web-dev-portfolio:theme-state-1.0.0"
   );
-  if (theme) theme as ThemeTypes;
+  if (theme) return theme as ThemeTypes;
   if (
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches
@@ -21,7 +21,7 @@ function getDefaultTheme() {
 }
 
 export function ThemeSelector() {
-  const [theme, setTheme] = useState<ThemeTypes>(getDefaultTheme);
+  const [theme, setTheme] = useState<ThemeTypes | "">("");
 
   function handleThemeChange() {
     setTheme((prev) => {
@@ -41,6 +41,7 @@ export function ThemeSelector() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", getDefaultTheme());
+    setTheme(getDefaultTheme);
   }, []);
 
   return (
