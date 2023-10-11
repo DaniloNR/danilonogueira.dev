@@ -16,7 +16,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: solid calc(1rem / 16) var(--heading-color);
+    border: solid calc(1rem / 16) var(--text);
     background-color: var(--background);
     box-sizing: border-box;
     width: calc(var(--label-size));
@@ -31,7 +31,7 @@
       width: var(--ball-size);
       height: var(--ball-size);
       border-radius: 50%;
-      background-color: var(--heading-color);
+      background-color: var(--text);
       left: var(--label-padding);
       will-change: left;
       transition: left 0.25s ease;

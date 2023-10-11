@@ -13,12 +13,12 @@
   font-weight: 500;
 
   span:first-child {
-    color: var(--heading-color);
+    color: var(--text);
     font-weight: 500;
   }
 
   span:last-child {
-    color: var(--text-color);
+    color: var(--text-medium);
     font-weight: 300;
   }
 }

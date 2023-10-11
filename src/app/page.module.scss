@@ -21,14 +21,14 @@
       gap: 2rem;
 
       .heading {
-        color: var(--heading-color);
+        color: var(--text);
         font-size: 3rem;
         font-weight: 500;
         width: 30rem;
       }
 
       .label {
-        background-color: var(--highlight);
+        background-color: var(--primary);
         font-size: 0.85rem;
         padding: 0.5rem;
         color: var(--background);
@@ -38,10 +38,11 @@
       .msg {
         width: 27rem;
         line-height: 2rem;
+        color: var(--text-medium);
       }
 
       .link {
-        color: var(--highlight);
+        color: var(--primary);
         text-decoration: underline;
         text-transform: uppercase;
         font-size: 1.1rem;
@@ -65,7 +66,7 @@
         top: -7rem;
         background-image: linear-gradient(
           to right bottom,
-          var(--background-alt),
+          var(--secondary),
           var(--background)
         );
         border-radius: 50%;
@@ -98,7 +99,7 @@
         border-radius: 50%;
         background-color: transparent;
         transform-style: preserve-3d;
-        background-color: var(--background-alt);
+        background-color: var(--secondary);
         animation: orbit 60s linear infinite;
         animation-play-state: paused;
 
