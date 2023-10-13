@@ -28,14 +28,36 @@ export default function Home() {
               alt="Profile picture"
               width={644}
               height={921}
-              priority
+              sizes="100vw"
+              style={{
+                width: "100%",
+                height: "auto",
+              }}
             />
           </div>
           <div className={styles.sphere}>
-            <Image src="/vue.png" alt="Vue" width={100} height={100} />
+            <Image
+              src="/vue.png"
+              alt="Vue"
+              width={100}
+              height={100}
+              style={{
+                width: "50%",
+                height: "auto",
+              }}
+            />
           </div>
           <div className={styles.sphere}>
-            <Image src="/react.png" alt="React" width={100} height={100} />
+            <Image
+              src="/react.png"
+              alt="React"
+              width={100}
+              height={100}
+              style={{
+                width: "50%",
+                height: "auto",
+              }}
+            />
           </div>
           <div className={styles.sphere}>
             <Image
@@ -43,6 +65,10 @@ export default function Home() {
               alt="Typescript"
               width={100}
               height={100}
+              style={{
+                width: "50%",
+                height: "auto",
+              }}
             />
           </div>
         </div>

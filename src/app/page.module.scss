@@ -4,14 +4,15 @@
   justify-content: space-between;
   align-items: center;
   padding: 10rem 6rem 0 6rem;
-  min-height: 100vh;
+  min-height: calc(100vh - 4rem);
 
   section {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     width: 80%;
-    height: 100%;
+    gap: 6rem;
+    flex: 1;
 
     .description {
       display: flex;
@@ -25,6 +26,7 @@
         font-size: 3rem;
         font-weight: 500;
         width: 30rem;
+        margin: 0;
       }
 
       .label {
@@ -33,12 +35,14 @@
         padding: 0.5rem;
         color: var(--background);
         border-radius: 3px;
+        margin: 0;
       }
 
       .msg {
         width: 27rem;
         line-height: 2rem;
         color: var(--text-medium);
+        margin: 0;
       }
 
       .link {
@@ -46,17 +50,19 @@
         text-decoration: underline;
         text-transform: uppercase;
         font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0;
       }
     }
 
     .profile {
-      flex: 1;
       position: relative;
       display: flex;
       justify-content: center;
       perspective: 300vw;
       perspective-origin: 0% 0%;
-      height: 750px;
+      max-width: 30vw;
+      width: 100%;
 
       &:before {
         content: "";
@@ -73,39 +79,50 @@
       }
 
       .picture {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
         img {
           z-index: 2;
-          width: 100%;
-          height: 100%;
           position: relative;
           object-fit: contain;
         }
       }
 
-      &:hover {
-        .sphere {
-          animation-play-state: running;
+      /* Enable hover only on non-touch devices */
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          .sphere {
+            animation-play-state: running;
+          }
         }
       }
 
       .sphere {
         position: absolute;
-        bottom: 10rem;
+        bottom: 7vw;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 10rem;
-        height: 10rem;
+        width: 10vw;
+        height: 10vw;
         border-radius: 50%;
         background-color: transparent;
         transform-style: preserve-3d;
         background-color: var(--secondary);
         animation: orbit 60s linear infinite;
         animation-play-state: paused;
+        // box-shadow: -2.5vw 2.5vw 80px var(--secondary);
+
+        /* no animations */
+        @media (prefers-reduced-motion) {
+          animation-play-state: paused;
+        }
 
         @keyframes orbit {
           0% {
-            transform: rotateY(0) translate3d(400px, 0, 0) rotateY(0);
+            transform: rotateY(0) translate3d(20vw, 0, 0) rotateY(0);
             z-index: 0;
           }
           25% {
@@ -115,7 +132,7 @@
             z-index: 3;
           }
           100% {
-            transform: rotateY(360deg) translate3d(400px, 0, 0) rotateY(-360deg);
+            transform: rotateY(360deg) translate3d(20vw, 0, 0) rotateY(-360deg);
             z-index: 3;
           }
         }
