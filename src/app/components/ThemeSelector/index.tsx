@@ -51,6 +51,7 @@ export function ThemeSelector() {
         id="theme-switch"
         onChange={handleThemeChange}
         value={theme}
+        checked={theme === "DARK_THEME"}
       />
       <label htmlFor="theme-switch" className={computedLabel()}>
         <Moon size="1.5rem" color="#f1d952" weight="fill" alt="Dark theme" />
