@@ -7,9 +7,12 @@ export default function Home() {
       <section>
         <div className={styles.description}>
           <p className={styles.label}>Front-End Developer</p>
-          <h1 className={styles.heading}>Talk is cheap. Show me the code</h1>
+          <h1 className={styles.heading}>
+            Code, Creativity, and Collaboration
+          </h1>
           <p className={styles.msg}>
-            I design and code beautifully simple things, and I love what I do
+            I love creating quality-driven web applications, delivering seamless
+            user experiences, while solving complex challenges.
           </p>
           <a
             className={styles.link}
@@ -37,6 +40,18 @@ export default function Home() {
           </div>
           <div className={styles.sphere}>
             <Image
+              src="/typescript.png"
+              alt="Typescript"
+              width={100}
+              height={100}
+              style={{
+                width: "50%",
+                height: "auto",
+              }}
+            />
+          </div>
+          <div className={styles.sphere}>
+            <Image
               src="/vue.png"
               alt="Vue"
               width={100}
@@ -47,6 +62,7 @@ export default function Home() {
               }}
             />
           </div>
+
           <div className={styles.sphere}>
             <Image
               src="/react.png"
@@ -59,19 +75,10 @@ export default function Home() {
               }}
             />
           </div>
-          <div className={styles.sphere}>
-            <Image
-              src="/typescript.png"
-              alt="Typescript"
-              width={100}
-              height={100}
-              style={{
-                width: "50%",
-                height: "auto",
-              }}
-            />
-          </div>
         </div>
+      </section>
+      <section>
+        <h1>New Section</h1>
       </section>
     </main>
   );
