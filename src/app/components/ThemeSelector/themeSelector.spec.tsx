@@ -8,11 +8,17 @@ beforeAll(() => {
     store[key] = value;
   });
   global.Storage.prototype.getItem = jest.fn((key) => store[key]);
+  (global.matchMedia as jest.Mock) = jest.fn((query) => ({
+    matches: false,
+    media: query,
+    addListener: jest.fn(),
+    removeListener: jest.fn(),
+  }));
 });
 
 beforeEach(() => {
-  store = {}
-})
+  store = {};
+});
 
 describe("Theme Selector", () => {
   it("Loads the default light theme if none is set", () => {
@@ -59,11 +65,25 @@ describe("Theme Selector", () => {
       "DARK_THEME"
     );
   });
+
+  it("Loads the theme based on OS color-scheme if local storage is unset", () => {
+    // Arranje
+    (global.matchMedia as jest.Mock).mockReturnValue({
+      matches: true,
+    });
+    render(<ThemeSelector />);
+
+    // Act
+    const input = screen.getByDisplayValue("DARK_THEME");
+
+    // Assert
+    expect(input).toBeChecked();
+  });
 });
 
 afterAll(() => {
   // return our mocks to their original values
-  // 🚨 THIS IS VERY IMPORTANT to avoid polluting future tests!
   (global.Storage.prototype.setItem as jest.Mock).mockReset();
   (global.Storage.prototype.getItem as jest.Mock).mockReset();
+  (global.matchMedia as jest.Mock).mockReset();
 });
