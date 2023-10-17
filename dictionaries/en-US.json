@@ -1,0 +1,9 @@
+{
+  "server-component": {
+    "welcome": "Welcome"
+  },
+  "theme-selector": {
+    "light": "Light theme",
+    "dark": "Dark theme"
+  }
+}
