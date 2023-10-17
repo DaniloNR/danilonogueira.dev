@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 import Link from "next/link";
+import { Locale } from "../../../../../i18n-config";
 
 export interface NavigationLinks {
   name: string;
@@ -11,19 +12,28 @@ export interface NavigationLinks {
 
 interface NavigationProps {
   navLinks: NavigationLinks[];
+  lang: Locale;
 }
 
-export function Navigation({ navLinks }: NavigationProps) {
+export function Navigation({ navLinks, lang }: NavigationProps) {
   const pathname = usePathname();
+
+  function isActiveClass({ href }: NavigationLinks) {
+    const link = href.replace("[lang]", lang);
+
+    if (pathname === link) {
+      return styles["link--active"];
+    }
+    return "";
+  }
 
   return (
     <nav className={styles.navigation}>
       {navLinks.map((link) => {
-        const isActive = pathname === link.href ? styles["link--active"] : "";
         return (
           <Link
-            className={`${styles.link} ${isActive}`}
-            href={link.href}
+            className={`${styles.link} ${isActiveClass(link)}`}
+            href={link.href.replace("[lang]", lang)}
             key={link.name}
           >
             {link.name}

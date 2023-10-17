@@ -13,7 +13,7 @@
     width: 100%;
     gap: 6rem;
     flex: 1;
-    padding: 0 calc(10% + 5rem) 3rem calc(10% + 5rem);
+    padding: 0 calc(10% + 5rem) 0 calc(10% + 5rem);
 
     &:nth-child(even) {
       background-color: var(--secondary);
@@ -89,6 +89,8 @@
         align-items: center;
         flex: 1;
         img {
+          width: 100%;
+          height: auto;
           z-index: 2;
           position: relative;
           object-fit: contain;
@@ -123,6 +125,11 @@
         /* no animations */
         @media (prefers-reduced-motion) {
           animation-play-state: paused;
+        }
+
+        img {
+          width: 50%;
+          height: auto;
         }
 
         @keyframes orbit {

@@ -1,26 +1,31 @@
+import { Locale } from "../../../../../i18n-config";
 import { Navigation, NavigationLinks } from "../Navigation";
 import { ThemeSelector } from "../ThemeSelector";
 import styles from "./styles.module.scss";
 import { Noto_Sans } from "next/font/google";
 const NotoSans = Noto_Sans({ weight: ["300", "500"], subsets: ["latin"] });
 
-export function Header() {
+type HeaderProps = {
+  lang: Locale;
+};
+
+export function Header({ lang }: HeaderProps) {
   const navLinks: NavigationLinks[] = [
     {
       name: "Home",
-      href: "/",
+      href: "/[lang]",
     },
     {
       name: "Career",
-      href: "/career",
+      href: "/[lang]/career",
     },
     {
       name: "Projects",
-      href: "/projects",
+      href: "/[lang]/projects",
     },
     {
       name: "About",
-      href: "/about",
+      href: "/[lang]/about",
     },
   ];
 
@@ -30,7 +35,7 @@ export function Header() {
         <span className={NotoSans.className}>Danilo</span>
         <span className={NotoSans.className}>Nogueira</span>
       </div>
-      <Navigation navLinks={navLinks} />
+      <Navigation navLinks={navLinks} lang={lang} />
       <ThemeSelector />
     </header>
   );
