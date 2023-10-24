@@ -31,11 +31,14 @@ export function middleware(request: NextRequest) {
       "/apple-icon.png",
       "/favicon.ico",
       "/next.svg",
-      "profile.png",
-      "react.png",
-      "typescript.png",
-      "vercel.svg",
-      "vue.png",
+      "/profile.png",
+      "/react.png",
+      "/typescript.png",
+      "/vercel.svg",
+      "/vue.png",
+      "/br-flag.png",
+      "/us-flag.png",
+      "/uk-flag.png",
     ].includes(pathname)
   )
     return;
