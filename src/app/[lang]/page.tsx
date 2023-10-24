@@ -2,7 +2,6 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import { getDictionary } from "../../../get-dictionary";
 import { Locale } from "../../../i18n-config";
-import LocaleSwitcher from "./components/LocaleSwitcher";
 
 type HomeProps = {
   params: {
@@ -19,6 +18,7 @@ type Technologies = {
 
 export default async function Home({ params: { lang } }: HomeProps) {
   const dictionary = await getDictionary(lang);
+
   const technologies: Technologies[] = [
     {
       src: "/typescript.png",
@@ -84,13 +84,6 @@ export default async function Home({ params: { lang } }: HomeProps) {
       </section>
       <section>
         <h1>New Section</h1>
-        <div>
-          <p>Current locale: {lang}</p>
-          <p>
-            This text is rendered on the server:{" "}
-            {dictionary["server-component"].welcome}
-          </p>
-        </div>
       </section>
     </main>
   );
