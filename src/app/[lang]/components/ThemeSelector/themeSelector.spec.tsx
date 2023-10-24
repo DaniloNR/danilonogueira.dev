@@ -25,9 +25,9 @@ describe("Theme Selector", () => {
     // Arranje
     render(<ThemeSelector />);
     // Act
-    const input = screen.getByDisplayValue("LIGHT_THEME");
+    const button = screen.getByRole("button");
     // Assert
-    expect(input).not.toBeChecked();
+    expect(button).toHaveAttribute("aria-pressed", "false");
   });
 
   it("Correctly first loads the theme stored on local storage", () => {
@@ -37,10 +37,10 @@ describe("Theme Selector", () => {
     render(<ThemeSelector />);
 
     // Act
-    const input = screen.getByDisplayValue("DARK_THEME");
+    const button = screen.getByRole("button");
 
     // Assert
-    expect(input).toBeChecked();
+    expect(button).toHaveAttribute("aria-pressed", "true");
     expect(global.Storage.prototype.getItem(storeID)).toEqual("DARK_THEME");
     expect(document.documentElement).toHaveAttribute(
       "data-theme",
@@ -51,14 +51,14 @@ describe("Theme Selector", () => {
   it("Switch themes when toggle is pressed", async () => {
     // Arranje
     render(<ThemeSelector />);
-    const input = screen.getByDisplayValue("LIGHT_THEME");
+    const button = screen.getByRole("button");
     const storeID = "@web-dev-portfolio:theme-state-1.0.0";
 
     // Act
-    await userEvent.click(input);
+    await userEvent.click(button);
 
     // Assert
-    expect(input).toBeChecked();
+    expect(button).toHaveAttribute("aria-pressed", "true");
     expect(global.Storage.prototype.getItem(storeID)).toEqual("DARK_THEME");
     expect(document.documentElement).toHaveAttribute(
       "data-theme",
@@ -74,10 +74,10 @@ describe("Theme Selector", () => {
     render(<ThemeSelector />);
 
     // Act
-    const input = screen.getByDisplayValue("DARK_THEME");
+    const button = screen.getByRole("button");
 
     // Assert
-    expect(input).toBeChecked();
+    expect(button).toHaveAttribute("aria-pressed", "true");
   });
 });
 

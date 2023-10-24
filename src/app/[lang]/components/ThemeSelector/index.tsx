@@ -1,7 +1,8 @@
 "use client";
-import { Sun, Moon } from "phosphor-react";
+import { Sun, Moon } from "@phosphor-icons/react";
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
+import { ToggleSwitch } from "../ui/ToggleSwitch";
 
 type ThemeTypes = "LIGHT_THEME" | "DARK_THEME";
 
@@ -21,42 +22,49 @@ function getDefaultTheme() {
 }
 
 export function ThemeSelector() {
-  const [theme, setTheme] = useState<ThemeTypes | "">("");
+  const [theme, setTheme] = useState<ThemeTypes>(getDefaultTheme);
 
-  function handleThemeChange() {
-    setTheme((prev) => {
-      const current = prev === "DARK_THEME" ? "LIGHT_THEME" : "DARK_THEME";
-      localStorage.setItem("@web-dev-portfolio:theme-state-1.0.0", current);
-      document.documentElement.setAttribute("data-theme", current);
-      return current;
-    });
-  }
-
-  function computedLabel() {
-    if (theme === "DARK_THEME") {
-      return styles.label, styles.active;
+  useEffect(() => {
+    if (theme) {
+      console.log(theme);
+      localStorage.setItem("@web-dev-portfolio:theme-state-1.0.0", theme);
+      document.documentElement.setAttribute("data-theme", theme);
     }
-    return styles.label;
-  }
+  }, [theme]);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", getDefaultTheme());
-    setTheme(getDefaultTheme);
   }, []);
 
   return (
     <div className={styles.theme}>
-      <input
-        type="checkbox"
-        id="theme-switch"
-        onChange={handleThemeChange}
-        value={theme}
-        checked={theme === "DARK_THEME"}
+      <ToggleSwitch<ThemeTypes>
+        variant="BUTTON_VARIANT"
+        onState={{
+          icon: (
+            <Moon
+              size="1.25rem"
+              color="currentcolor"
+              alt="Switch to light theme"
+            />
+          ),
+          value: "DARK_THEME",
+        }}
+        offState={{
+          icon: (
+            <Sun
+              size="1.25rem"
+              color="currentcolor"
+              alt="Switch to dark theme"
+            />
+          ),
+          value: "LIGHT_THEME",
+        }}
+        state={{
+          setFunction: setTheme,
+          value: theme,
+        }}
       />
-      <label htmlFor="theme-switch" className={computedLabel()}>
-        <Moon size="1.5rem" color="#f1d952" weight="fill" alt="Dark theme" />
-        <Sun size="1.5rem" color="#f39c12" weight="fill" alt="Light theme" />
-      </label>
     </div>
   );
 }

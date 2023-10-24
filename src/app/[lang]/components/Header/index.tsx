@@ -1,4 +1,5 @@
 import { Locale } from "../../../../../i18n-config";
+import LocaleSwitcher from "../LocaleSwitcher";
 import { Navigation, NavigationLinks } from "../Navigation";
 import { ThemeSelector } from "../ThemeSelector";
 import styles from "./styles.module.scss";
@@ -36,6 +37,7 @@ export function Header({ lang }: HeaderProps) {
         <span className={NotoSans.className}>Nogueira</span>
       </div>
       <Navigation navLinks={navLinks} lang={lang} />
+      <LocaleSwitcher lang={lang} />
       <ThemeSelector />
     </header>
   );

@@ -1,0 +1,40 @@
+.locales {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .flag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+    }
+  }
+
+  .link {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.25s ease-in-out;
+
+    &:hover {
+      background-color: var(--primary);
+    }
+
+    span {
+      color: var(--background);
+      white-space: nowrap;
+    }
+  }
+}

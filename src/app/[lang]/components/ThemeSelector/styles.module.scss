@@ -2,45 +2,5 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  input {
-    display: none;
-  }
-
-  label {
-    --label-size: 4rem;
-    --label-icon-size: calc(var(--label-size) / 2);
-    --label-padding: calc(var(--label-size) / 16);
-    --ball-size: calc(var(--label-icon-size) - var(--label-padding) * 2);
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: solid calc(1rem / 16) var(--text);
-    background-color: var(--background);
-    box-sizing: border-box;
-    width: calc(var(--label-size));
-    height: calc(var(--label-size) / 2);
-    border-radius: var(--label-size);
-    padding: var(--label-padding);
-    cursor: pointer;
-
-    &:before {
-      content: "";
-      position: absolute;
-      width: var(--ball-size);
-      height: var(--ball-size);
-      border-radius: 50%;
-      background-color: var(--text);
-      left: var(--label-padding);
-      will-change: left;
-      transition: left 0.25s ease;
-    }
-  }
-
-  label.active {
-    &:before {
-      left: calc(100% - var(--ball-size) - var(--label-padding));
-    }
-  }
+  color: var(--warning);
 }

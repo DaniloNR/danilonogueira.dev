@@ -70,6 +70,7 @@ export default async function Home({ params: { lang } }: HomeProps) {
               width={644}
               height={921}
               sizes="100vw"
+              priority
             />
           </div>
           {technologies.map(({ src, alt, width, height }, index) => {
@@ -84,7 +85,6 @@ export default async function Home({ params: { lang } }: HomeProps) {
       <section>
         <h1>New Section</h1>
         <div>
-          <LocaleSwitcher />
           <p>Current locale: {lang}</p>
           <p>
             This text is rendered on the server:{" "}
