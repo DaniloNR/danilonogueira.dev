@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import { getDictionary } from "../../../get-dictionary";
-import { Locale } from "../../../i18n-config";
+import { dictionary } from "@/../translations";
+import { Locale } from "@/../i18n-config";
 
 type HomeProps = {
   params: {
@@ -17,7 +17,7 @@ type Technologies = {
 };
 
 export default async function Home({ params: { lang } }: HomeProps) {
-  const dictionary = await getDictionary(lang);
+  const t = dictionary[lang];
 
   const technologies: Technologies[] = [
     {
@@ -44,21 +44,16 @@ export default async function Home({ params: { lang } }: HomeProps) {
     <main className={styles.main}>
       <section>
         <div className={styles.description}>
-          <p className={styles.label}>Front-End Developer</p>
-          <h1 className={styles.heading}>
-            Code, Creativity, and Collaboration
-          </h1>
-          <p className={styles.msg}>
-            I love creating quality-driven web applications, delivering seamless
-            user experiences, while solving complex challenges.
-          </p>
+          <p className={styles.label}>{t.homepage.label}</p>
+          <h1 className={styles.heading}>{t.homepage.heading}</h1>
+          <p className={styles.msg}>{t.homepage.message}</p>
           <a
             className={styles.link}
             href="https://www.linkedin.com/in/danilonr"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Let&apos;s Chat!
+            {t.homepage.link}
           </a>
         </div>
 

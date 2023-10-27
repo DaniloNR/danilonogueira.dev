@@ -1,15 +1,13 @@
-import "./globals.scss";
 import type { Metadata } from "next";
 import { Roboto_Mono } from "next/font/google";
 import { Header } from "./components/Header";
-import { Locale } from "../../../i18n-config";
+import { Locale } from "@/../i18n-config";
+import "./globals.scss";
+import { dictionary } from "@/../translations";
 
 const RobotoMono = Roboto_Mono({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: "Web Dev Portfolio",
-  description: "My personal portfolio",
-};
+export const metadata: Metadata = {};
 
 type RootProps = {
   children: React.ReactNode;
@@ -18,11 +16,16 @@ type RootProps = {
   };
 };
 
-export default function RootLayout({ children, params: { lang } }: RootProps) {
+export default function RootLayout({ children, params }: RootProps) {
+  const t = dictionary[params.lang];
+
+  metadata.title = t.document.title;
+  metadata.description = t.document.description;
+
   return (
-    <html lang="en">
+    <html lang={params.lang}>
       <body className={RobotoMono.className}>
-        <Header lang={lang} />
+        <Header lang={params.lang} />
         {children}
       </body>
     </html>

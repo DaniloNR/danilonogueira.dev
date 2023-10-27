@@ -85,6 +85,18 @@ body {
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  &::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: var(--secondary);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--text-light);
+  }
 }
 
 body {
