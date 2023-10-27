@@ -1,7 +1,8 @@
-import { NextApiRequest } from "next";
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 import { i18n } from "../i18n-config";
+
+const PUBLIC_FILE = /\.(.*)$/;
 
 function getPreferredLocale(req: NextRequest): string {
   const url = new URL(req.url);
@@ -19,41 +20,31 @@ function getPreferredLocale(req: NextRequest): string {
     return acceptedLanguages[0];
   }
 
-  return "en-US";
+  return req.nextUrl.defaultLocale || "en-US";
 }
 
-export function middleware(request: NextRequest) {
-  const pathname = request.nextUrl.pathname;
-
+export function middleware(req: NextRequest) {
   if (
-    [
-      "/icon.png",
-      "/apple-icon.png",
-      "/favicon.ico",
-      "/next.svg",
-      "/profile.png",
-      "/react.png",
-      "/typescript.png",
-      "/vercel.svg",
-      "/vue.png",
-      "/br-flag.png",
-      "/us-flag.png",
-      "/uk-flag.png",
-    ].includes(pathname)
-  )
+    req.nextUrl.pathname.startsWith("/_next") ||
+    req.nextUrl.pathname.includes("/api/") ||
+    PUBLIC_FILE.test(req.nextUrl.pathname)
+  ) {
     return;
+  }
+
+  const pathname = req.nextUrl.pathname;
 
   const pathnameIsMissingLocale = i18n.locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
   if (pathnameIsMissingLocale) {
-    const locale = getPreferredLocale(request);
+    const locale = getPreferredLocale(req);
 
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url
+        req.url
       )
     );
   }
