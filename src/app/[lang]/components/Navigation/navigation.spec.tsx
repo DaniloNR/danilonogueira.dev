@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { Navigation, NavigationLinks } from "./";
+import { Navigation, NavigationLinks } from ".";
 import { usePathname } from "next/navigation";
 
 jest.mock("next/navigation", () => ({
@@ -13,7 +13,7 @@ describe("Header component", () => {
     const links: NavigationLinks[] = [
       {
         name: "Home",
-        href: "/[lang]",
+        href: "/",
       },
     ];
     render(<Navigation navLinks={links} lang={"en-US"} />);
@@ -31,11 +31,11 @@ describe("Header component", () => {
     const links: NavigationLinks[] = [
       {
         name: "Home",
-        href: "/[lang]",
+        href: "/",
       },
       {
         name: "Career",
-        href: "/[lang]/career",
+        href: "/career",
       },
     ];
     render(<Navigation navLinks={links} lang={"en-US"} />);

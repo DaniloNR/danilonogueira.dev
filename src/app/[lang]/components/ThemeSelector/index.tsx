@@ -3,6 +3,8 @@ import { Sun, Moon } from "@phosphor-icons/react";
 import styles from "./styles.module.scss";
 import { useEffect, useState } from "react";
 import { ToggleSwitch } from "../ui/ToggleSwitch";
+import { Locale } from "@/../i18n-config";
+import { dictionary } from "@/../translations";
 
 type ThemeTypes = "LIGHT_THEME" | "DARK_THEME";
 
@@ -21,12 +23,13 @@ function getDefaultTheme() {
   return "LIGHT_THEME";
 }
 
-export function ThemeSelector() {
+export function ThemeSelector({ lang }: { lang: Locale }) {
   const [theme, setTheme] = useState<ThemeTypes>(getDefaultTheme);
+
+  const t = dictionary[lang];
 
   useEffect(() => {
     if (theme) {
-      console.log(theme);
       localStorage.setItem("@web-dev-portfolio:theme-state-1.0.0", theme);
       document.documentElement.setAttribute("data-theme", theme);
     }
@@ -45,7 +48,7 @@ export function ThemeSelector() {
             <Moon
               size="1.25rem"
               color="currentcolor"
-              alt="Switch to light theme"
+              alt={t.theme_selector.light}
             />
           ),
           value: "DARK_THEME",
@@ -55,7 +58,7 @@ export function ThemeSelector() {
             <Sun
               size="1.25rem"
               color="currentcolor"
-              alt="Switch to dark theme"
+              alt={t.theme_selector.dark}
             />
           ),
           value: "LIGHT_THEME",

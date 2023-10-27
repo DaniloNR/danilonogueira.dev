@@ -1,9 +1,11 @@
-import { Locale } from "../../../../../i18n-config";
+import Link from "next/link";
 import LocaleSwitcher from "../LocaleSwitcher";
-import { Navigation, NavigationLinks } from "../Navigation";
+import styles from "@/app/[lang]/components/Header/styles.module.scss";
 import { ThemeSelector } from "../ThemeSelector";
-import styles from "./styles.module.scss";
+import { Locale } from "@/../i18n-config";
 import { Noto_Sans } from "next/font/google";
+import { Navigation, NavigationLinks } from "../Navigation";
+
 const NotoSans = Noto_Sans({ weight: ["300", "500"], subsets: ["latin"] });
 
 type HeaderProps = {
@@ -14,31 +16,33 @@ export function Header({ lang }: HeaderProps) {
   const navLinks: NavigationLinks[] = [
     {
       name: "Home",
-      href: "/[lang]",
+      href: "/",
     },
     {
       name: "Career",
-      href: "/[lang]/career",
+      href: "/career",
     },
     {
       name: "Projects",
-      href: "/[lang]/projects",
+      href: "/projects",
     },
     {
       name: "About",
-      href: "/[lang]/about",
+      href: "/about",
     },
   ];
 
   return (
     <header className={styles.header}>
-      <div className={styles.logo}>
-        <span className={NotoSans.className}>Danilo</span>
-        <span className={NotoSans.className}>Nogueira</span>
-      </div>
+      <Link href={navLinks[0].href} lang={lang} hrefLang={lang}>
+        <div className={styles.logo}>
+          <span className={NotoSans.className}>Danilo</span>
+          <span className={NotoSans.className}>Nogueira</span>
+        </div>
+      </Link>
       <Navigation navLinks={navLinks} lang={lang} />
       <LocaleSwitcher lang={lang} />
-      <ThemeSelector />
+      <ThemeSelector lang={lang} />
     </header>
   );
 }

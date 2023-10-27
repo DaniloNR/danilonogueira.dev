@@ -23,7 +23,7 @@ beforeEach(() => {
 describe("Theme Selector", () => {
   it("Loads the default light theme if none is set", () => {
     // Arranje
-    render(<ThemeSelector />);
+    render(<ThemeSelector lang="en-US" />);
     // Act
     const button = screen.getByRole("button");
     // Assert
@@ -34,7 +34,7 @@ describe("Theme Selector", () => {
     // Arranje
     const storeID = "@web-dev-portfolio:theme-state-1.0.0";
     global.Storage.prototype.setItem(storeID, "DARK_THEME");
-    render(<ThemeSelector />);
+    render(<ThemeSelector lang="en-US" />);
 
     // Act
     const button = screen.getByRole("button");
@@ -50,7 +50,7 @@ describe("Theme Selector", () => {
 
   it("Switch themes when toggle is pressed", async () => {
     // Arranje
-    render(<ThemeSelector />);
+    render(<ThemeSelector lang="en-US" />);
     const button = screen.getByRole("button");
     const storeID = "@web-dev-portfolio:theme-state-1.0.0";
 
@@ -71,7 +71,7 @@ describe("Theme Selector", () => {
     (global.matchMedia as jest.Mock).mockReturnValue({
       matches: true,
     });
-    render(<ThemeSelector />);
+    render(<ThemeSelector lang="en-US" />);
 
     // Act
     const button = screen.getByRole("button");

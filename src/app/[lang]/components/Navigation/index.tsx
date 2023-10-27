@@ -19,9 +19,14 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
   const pathname = usePathname();
 
   function isActiveClass({ href }: NavigationLinks) {
-    const link = href.replace("[lang]", lang);
+    const pathSegments = pathname.split("/");
+    if (pathSegments.length > 2) {
+      pathSegments.splice(1, 1);
+    } else {
+      pathSegments[1] = "";
+    }
 
-    if (pathname === link) {
+    if (pathSegments.join("/") === href) {
       return styles["link--active"];
     }
     return "";
@@ -33,8 +38,10 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
         return (
           <Link
             className={`${styles.link} ${isActiveClass(link)}`}
-            href={link.href.replace("[lang]", lang)}
+            href={link.href}
             key={link.name}
+            lang={lang}
+            hrefLang={lang}
           >
             {link.name}
           </Link>

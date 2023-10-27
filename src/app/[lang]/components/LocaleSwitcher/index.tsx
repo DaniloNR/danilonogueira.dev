@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { Locale, i18n } from "../../../../../i18n-config";
+import { Locale, i18n } from "@/../i18n-config";
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import { DropdownMenu } from "../ui/DropdownMenu";
@@ -13,11 +13,7 @@ type LocaleHash = {
   alt: string;
 };
 
-type LocaleSwitcherProps = {
-  lang: Locale;
-};
-
-export default function LocaleSwitcher({ lang }: LocaleSwitcherProps) {
+export default function LocaleSwitcher({ lang }: { lang: Locale }) {
   const pathName = usePathname();
 
   const localeHash: Record<"pt-BR" | "en-US", LocaleHash> = {
@@ -60,6 +56,8 @@ export default function LocaleSwitcher({ lang }: LocaleSwitcherProps) {
               key={locale}
               href={redirectedPathName(locale)}
               className={styles.link}
+              lang={locale}
+              hrefLang={locale}
             >
               <div className={styles.flag}>
                 <Image
