@@ -43,7 +43,7 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
             lang={lang}
             hrefLang={lang}
           >
-            {link.name}
+            <span>{link.name}</span>
           </Link>
         );
       })}

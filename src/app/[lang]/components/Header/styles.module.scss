@@ -23,3 +23,67 @@
     font-weight: 300;
   }
 }
+
+/* Mobile */
+@media (max-width: 700px) {
+  .header {
+    position: fixed;
+    top: 0;
+    padding: 0 1rem 0 1rem;
+    width: 100vw;
+    gap: 1rem;
+    background-color: var(--background);
+    margin: 0;
+  }
+
+  .logo {
+    gap: 0.25rem;
+    overflow: hidden;
+
+    &:focus {
+      outline: 1px auto -webkit-focus-ring-color;
+    }
+
+    span {
+      display: block;
+      visibility: hidden;
+      width: 1rem;
+
+      &:first-letter {
+        visibility: visible;
+      }
+
+      &:last-child {
+        font-size: 1.25rem;
+        margin-top: 0.37rem;
+      }
+    }
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  .header {
+    width: 100vw;
+    margin: 1rem auto 0 auto;
+    padding: 0 1rem;
+  }
+  .logo {
+    gap: 0.25rem;
+
+    span {
+      display: block;
+      visibility: hidden;
+      width: 1rem;
+
+      &:first-letter {
+        visibility: visible;
+      }
+
+      &:last-child {
+        font-size: 1.25rem;
+        margin-top: 0.37rem;
+      }
+    }
+  }
+}
