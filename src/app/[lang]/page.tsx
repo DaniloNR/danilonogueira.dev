@@ -45,7 +45,7 @@ export default async function Home({ params: { lang } }: HomeProps) {
       <section>
         <div className={styles.description}>
           <p className={styles.label}>{t.homepage.label}</p>
-          <h1 className={styles.heading}>{t.homepage.heading}</h1>
+          <h2 className={styles.heading}>{t.homepage.heading}</h2>
           <p className={styles.msg}>{t.homepage.message}</p>
           <a
             className={styles.link}

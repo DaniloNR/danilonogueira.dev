@@ -8,7 +8,7 @@
 
   section {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     align-items: flex-start;
     width: 100%;
     gap: 6rem;
@@ -25,12 +25,11 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 2rem;
+      width: 30rem;
 
       .heading {
         color: var(--text);
-        font-size: 3rem;
         font-weight: 500;
-        width: 26rem;
         margin: 0;
       }
 
@@ -44,7 +43,7 @@
       }
 
       .msg {
-        width: 30rem;
+        // width: 30rem;
         line-height: 2rem;
         color: var(--text-medium);
         margin: 0;
@@ -66,14 +65,16 @@
       justify-content: center;
       perspective: 300vw;
       perspective-origin: 0% 0%;
-      max-width: 30vw;
+      max-width: 25vw;
       width: 100%;
+      min-width: 26rem;
 
       &:before {
         content: "";
         position: absolute;
-        width: 40vw;
-        height: 40vw;
+        width: 135%;
+        height: auto;
+        aspect-ratio: 1;
         top: -7rem;
         background-image: linear-gradient(
           to right bottom,
@@ -88,7 +89,9 @@
         justify-content: center;
         align-items: center;
         flex: 1;
+        width: 30rem;
         img {
+          min-width: 26rem;
           width: 100%;
           height: auto;
           z-index: 2;
@@ -107,20 +110,21 @@
       }
 
       .sphere {
+        --size: 35%;
+        aspect-ratio: 1;
         position: absolute;
-        bottom: 7vw;
+        bottom: 7rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 10vw;
-        height: 10vw;
+        width: var(--size);
+        height: auto;
         border-radius: 50%;
         background-color: transparent;
         transform-style: preserve-3d;
         background-color: var(--secondary);
         animation: orbit 60s linear infinite;
         animation-play-state: paused;
-        // box-shadow: -2.5vw 2.5vw 80px var(--secondary);
 
         /* no animations */
         @media (prefers-reduced-motion) {
@@ -134,7 +138,7 @@
 
         @keyframes orbit {
           0% {
-            transform: rotateY(0) translate3d(19vw, 0, 0) rotateY(0);
+            transform: rotateY(0) translate3d(200%, 0, 0) rotateY(0); // 19vw
             z-index: 0;
           }
           25% {
@@ -144,7 +148,7 @@
             z-index: 3;
           }
           100% {
-            transform: rotateY(360deg) translate3d(19vw, 0, 0) rotateY(-360deg);
+            transform: rotateY(360deg) translate3d(200%, 0, 0) rotateY(-360deg);
             z-index: 3;
           }
         }
@@ -175,8 +179,42 @@
 
 /* Mobile */
 @media (max-width: 700px) {
+  .main {
+    padding: 1rem 0 0 0;
+
+    section {
+      flex-direction: column;
+      align-items: center;
+      padding: 0 1rem 0 1rem;
+
+      .profile {
+        display: none;
+      }
+
+      .description {
+        width: 100%;
+        gap: 1rem;
+
+        .heading {
+          font-size: 2.369rem;
+        }
+      }
+    }
+  }
 }
 
 /* Tablet and Smaller Desktop */
 @media (min-width: 701px) and (max-width: 1120px) {
+  .main {
+    section {
+      flex-direction: column;
+      align-items: center;
+
+      .profile {
+        &:before {
+          top: -3rem;
+        }
+      }
+    }
+  }
 }
