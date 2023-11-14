@@ -1,0 +1,107 @@
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--secondary);
+  border-radius: 3px;
+  padding: 1rem;
+  flex: 1;
+  gap: 1rem;
+
+  &:nth-child(3n) {
+    flex: auto;
+  }
+
+  .profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    align-self: flex-start;
+
+    .profile__picture {
+      img {
+        border: 2px solid var(--primary);
+        border-radius: 50%;
+        object-fit: cover;
+        aspect-ratio: 1;
+      }
+    }
+
+    .profile__description {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+
+      span {
+        font-size: 0.85rem;
+        opacity: 0.5;
+      }
+
+      a {
+        &:first-of-type {
+          flex: 1;
+          color: var(--text);
+        }
+
+        color: var(--primary);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  section {
+    p {
+      margin: 0 0 0.5rem 0;
+      text-indent: 2rem;
+    }
+
+    &[data-expanded="false"] {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    a {
+      opacity: 0.5;
+      &:hover {
+        color: var(--primary);
+        text-decoration: underline;
+      }
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      transition: color 0.25s ease;
+      color: var(--text);
+      opacity: 0.5;
+      font-size: 0.85rem;
+
+      &:focus {
+        outline: 1px auto -webkit-focus-ring-color;
+      }
+
+      &:hover {
+        color: var(--primary);
+      }
+    }
+
+    small {
+      font-style: italic;
+    }
+  }
+}
