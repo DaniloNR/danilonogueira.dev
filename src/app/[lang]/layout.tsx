@@ -5,7 +5,10 @@ import { Locale } from "@/../i18n-config";
 import "./globals.scss";
 import { dictionary } from "@/../translations";
 
-const RobotoMono = Roboto_Mono({ subsets: ["latin"] });
+const RobotoMono = Roboto_Mono({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+});
 
 export const metadata: Metadata = {};
 
