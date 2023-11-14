@@ -1,42 +1,41 @@
 nav.navigation {
-  display: flex;
-  gap: 2rem;
   margin: 0 auto;
 
-  a.link {
-    height: 3rem;
+  ul {
+    list-style: none;
+    padding: 0;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--text);
-    transition: color 0.25s ease;
+    gap: 2rem;
 
-    &:hover {
-      color: var(--primary);
-    }
+    li {
+      a.link {
+        height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--text);
+        transition: color 0.25s ease;
 
-    span {
-      text-align: center;
-    }
+        &:hover {
+          color: var(--primary);
+        }
 
-    // &::before {
-    //   content: "<";
-    // }
+        span {
+          text-align: center;
+        }
 
-    // &::after {
-    //   content: ">";
-    // }
+        &.link--active {
+          color: var(--primary);
 
-    &.link--active {
-      color: var(--primary);
+          &::before {
+            content: "<";
+          }
 
-      &::before {
-        content: "<";
-      }
-
-      &::after {
-        content: "/>";
+          &::after {
+            content: "/>";
+          }
+        }
       }
     }
   }
@@ -45,24 +44,27 @@ nav.navigation {
 /* Mobile */
 @media (max-width: 700px) {
   nav.navigation {
-    gap: 0.5rem;
+    ul {
+      gap: 0.5rem;
+      li {
+        a.link {
+          gap: 0;
+          overflow: hidden;
 
-    a.link {
-      gap: 0;
-      overflow: hidden;
+          &:focus {
+            outline: 1px auto -webkit-focus-ring-color;
+          }
 
-      &:focus {
-        outline: 1px auto -webkit-focus-ring-color;
-      }
+          &:not(.link--active) {
+            span {
+              display: block;
+              visibility: hidden;
+              width: 1rem;
 
-      &:not(.link--active) {
-        span {
-          display: block;
-          visibility: hidden;
-          width: 1rem;
-
-          &:first-letter {
-            visibility: visible;
+              &:first-letter {
+                visibility: visible;
+              }
+            }
           }
         }
       }

@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import styles from "./styles.module.scss";
 import Link from "next/link";
-import { Locale } from "../../../../../i18n-config";
+import { Locale } from "@/../i18n-config";
 
 export interface NavigationLinks {
   name: string;
@@ -34,19 +34,22 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
 
   return (
     <nav className={styles.navigation}>
-      {navLinks.map((link) => {
-        return (
-          <Link
-            className={`${styles.link} ${isActiveClass(link)}`}
-            href={link.href}
-            key={link.name}
-            lang={lang}
-            hrefLang={lang}
-          >
-            <span>{link.name}</span>
-          </Link>
-        );
-      })}
+      <ul>
+        {navLinks.map((link) => {
+          return (
+            <li key={link.name}>
+              <Link
+                className={`${styles.link} ${isActiveClass(link)}`}
+                href={link.href}
+                lang={lang}
+                hrefLang={lang}
+              >
+                <span>{link.name}</span>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 }
