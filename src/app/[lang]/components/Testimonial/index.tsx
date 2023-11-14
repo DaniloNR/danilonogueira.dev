@@ -43,7 +43,7 @@ export default function Testimonial({ lang, testimonial }: TestimonialProps) {
         </div>
         <div className={styles.profile__description}>
           <a
-            href={testimonial.profile.company.website}
+            href={testimonial.profile.website}
             target="_blank"
             rel="noopener noreferrer"
           >
