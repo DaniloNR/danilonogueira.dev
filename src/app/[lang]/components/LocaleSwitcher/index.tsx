@@ -19,12 +19,12 @@ export default function LocaleSwitcher({ lang }: { lang: Locale }) {
   const localeHash: Record<"pt-BR" | "en-US", LocaleHash> = {
     "pt-BR": {
       title: "Portuguese",
-      src: "/br-flag.png",
+      src: "/flags/br-flag.png",
       alt: "Select portuguese language",
     },
     "en-US": {
       title: "English",
-      src: "/us-flag.png",
+      src: "/flags/us-flag.png",
       alt: "Select english language",
     },
   };
