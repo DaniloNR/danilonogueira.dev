@@ -24,4 +24,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Graphql";
 
-export const Graphql = CustomIcon;
+export default CustomIcon;

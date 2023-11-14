@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Php";
 
-export const Php = CustomIcon;
+export default CustomIcon;

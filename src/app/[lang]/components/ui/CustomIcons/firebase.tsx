@@ -25,4 +25,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Firebase";
 
-export const Firebase = CustomIcon;
+export default CustomIcon;

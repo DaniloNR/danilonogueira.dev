@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Webpack";
 
-export const Webpack = CustomIcon;
+export default CustomIcon;

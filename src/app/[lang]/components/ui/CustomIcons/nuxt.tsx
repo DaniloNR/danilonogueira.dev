@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Nuxt";
 
-export const Nuxt = CustomIcon;
+export default CustomIcon;

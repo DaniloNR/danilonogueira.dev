@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "VueJs";
 
-export const VueJs = CustomIcon;
+export default CustomIcon;

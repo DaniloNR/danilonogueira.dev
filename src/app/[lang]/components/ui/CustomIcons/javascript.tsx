@@ -19,4 +19,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "JavaScript";
 
-export const JavaScript = CustomIcon;
+export default CustomIcon;

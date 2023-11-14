@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Express";
 
-export const Express = CustomIcon;
+export default CustomIcon;

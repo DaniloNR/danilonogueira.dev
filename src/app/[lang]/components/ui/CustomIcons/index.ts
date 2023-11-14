@@ -5,7 +5,7 @@ export * from "./nextjs";
 export * from "./typescript";
 export * from "./firebase";
 export * from "./git";
-export * from "./nodejs";
+export * from "./node";
 export * from "./nuxt";
 export * from "./jest";
 export * from "./express";

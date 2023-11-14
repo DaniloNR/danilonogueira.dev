@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Mysql";
 
-export const Mysql = CustomIcon;
+export default CustomIcon;

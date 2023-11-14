@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Mongodb";
 
-export const Mongodb = CustomIcon;
+export default CustomIcon;

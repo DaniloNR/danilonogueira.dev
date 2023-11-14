@@ -19,4 +19,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "TypeScript";
 
-export const TypeScript = CustomIcon;
+export default CustomIcon;

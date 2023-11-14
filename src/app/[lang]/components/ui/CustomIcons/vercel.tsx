@@ -26,4 +26,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Vercel";
 
-export const Vercel = CustomIcon;
+export default CustomIcon;

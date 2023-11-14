@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "NextJs";
 
-export const NextJs = CustomIcon;
+export default CustomIcon;

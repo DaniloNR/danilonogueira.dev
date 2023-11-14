@@ -18,4 +18,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Git";
 
-export const Git = CustomIcon;
+export default CustomIcon;

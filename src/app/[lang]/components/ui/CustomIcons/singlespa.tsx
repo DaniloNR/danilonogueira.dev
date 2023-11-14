@@ -32,4 +32,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "SingleSpa";
 
-export const SingleSpa = CustomIcon;
+export default CustomIcon;

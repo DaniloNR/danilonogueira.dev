@@ -21,4 +21,4 @@ const CustomIcon: Icon = forwardRef((props, ref) => (
 
 CustomIcon.displayName = "Jest";
 
-export const Jest = CustomIcon;
+export default CustomIcon;
