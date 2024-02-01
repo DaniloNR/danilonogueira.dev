@@ -17,3 +17,4 @@ export * from "./php";
 export * from "./webpack";
 export * from "./singlespa";
 export * from "./vite";
+export * from "./linkedin";
