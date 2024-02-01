@@ -32,6 +32,10 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
     return "";
   }
 
+  function computeLocaleURL({ href }: NavigationLinks) {
+    return `/${lang}${href}`;
+  }
+
   return (
     <nav className={styles.navigation}>
       <ul>
@@ -40,7 +44,7 @@ export function Navigation({ navLinks, lang }: NavigationProps) {
             <li key={link.name}>
               <Link
                 className={`${styles.link} ${isActiveClass(link)}`}
-                href={link.href}
+                href={computeLocaleURL(link)}
                 lang={lang}
                 hrefLang={lang}
               >
