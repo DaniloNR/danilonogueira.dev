@@ -4,7 +4,7 @@ import { Locale } from "@/../i18n-config";
 import styles from "./styles.module.scss";
 import { useState } from "react";
 import Image from "next/image";
-import { LinkedinLogo } from "@phosphor-icons/react";
+import LinkedIn from "@/app/[lang]/components/ui/CustomIcons/linkedin";
 import { dictionary } from "@/../translations";
 
 export type Testimonial = {
@@ -71,8 +71,8 @@ export default function Testimonial({ lang, testimonial }: TestimonialProps) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <LinkedinLogo
-            size="1.25rem"
+          <LinkedIn
+            size="1rem"
             color="currentcolor"
             alt={t.testimonial.linkedin_tooltip}
           />
