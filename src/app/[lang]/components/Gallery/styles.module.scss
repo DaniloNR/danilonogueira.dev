@@ -1,0 +1,62 @@
+.gallery {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: grow 0.25s ease forwards;
+
+  button {
+    all: unset;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    &:focus {
+      outline: 1px auto -webkit-focus-ring-color;
+    }
+
+    &:disabled {
+      opacity: 0.6;
+      filter: grayscale(40%);
+      cursor: not-allowed;
+    }
+
+    &:first-of-type {
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 2rem;
+    }
+  }
+
+  .image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: calc(100% - 4rem);
+      height: auto;
+    }
+  }
+
+  @keyframes grow {
+    from {
+      transform: scale3d(0, 0, 0);
+    }
+    to {
+      transform: scale3d(1, 1, 1);
+      backdrop-filter: blur(12px);
+    }
+  }
+}
