@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { Locale } from "@/../i18n-config";
 import "./globals.scss";
 import { dictionary } from "@/../translations";
+import { Footer } from "./components/Footer";
 
 const RobotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -30,6 +31,7 @@ export default function RootLayout({ children, params }: RootProps) {
       <body className={RobotoMono.className}>
         <Header lang={params.lang} />
         {children}
+        <Footer lang={params.lang} />
       </body>
     </html>
   );
