@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { i18n } from "../i18n-config";
+import { i18n, Locale } from "../i18n-config";
 
 const PUBLIC_FILE = /\.(.*)$/;
 
@@ -16,8 +16,9 @@ function getPreferredLocale(req: NextRequest): string {
     const acceptLanguageHeader = req.headers.get("accept-language") as string;
     const acceptedLanguages = acceptLanguageHeader
       .split(",")
-      .map((language) => language.split(";")[0]);
-    return acceptedLanguages[0];
+      .map((language) => language.split(";")[0])
+      .filter((language) => i18n.locales.includes(language as Locale));
+    if (acceptedLanguages.length > 0) return acceptedLanguages[0];
   }
 
   return req.nextUrl.defaultLocale || "en-US";
@@ -40,7 +41,6 @@ export function middleware(req: NextRequest) {
 
   if (pathnameIsMissingLocale) {
     const locale = getPreferredLocale(req);
-
     return NextResponse.redirect(
       new URL(
         `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
