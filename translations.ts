@@ -125,6 +125,51 @@ export const dictionary = {
         ],
       },
     },
+    projects: {
+      main: {
+        title: "Building solutions",
+        description:
+          "As a passionate and forward-thinking Software Engineer, I enjoy immersing myself in exciting projects and turning ideas into reality. My approach goes beyond the ordinary – I'm committed to finding ways to enhance experiences and collaborating with others to bring fresh, innovative concepts to life. My toolkit is diverse, and I've harnessed a range of technologies to tackle various projects, always trying to deliver great value to the company and clients. Whether through hands-on experience or pioneering implementations, I bring a dynamic perspective to every endeavor. On the projects below, I will show how I've leveraged my skills to create meaningful solutions and contribute to companies that I've worked for.",
+        quote:
+          "There are more projects that I've worked in the past, but unfortunately they cannot be linked or shown here, due to the company's policies or simply because they are not online anymore.",
+      },
+      timeline: {
+        title: "Projects",
+        galleryAlt: "See screenshots",
+        projects: [
+          {
+            id: "dashboard",
+            name: "Administrative Dashboard",
+            description:
+              "A module created to display various data from one of the company's functionalities. Multiple interactive charts with filters and export options in image or PDF format.",
+          },
+          {
+            id: "newAdmin",
+            name: "Administrative System",
+            description:
+              "A complete system for clients to manage their companies within the platform, built with microfrontend architecture. The system served thousands of companies, allowing multiple configurations and data visualization.",
+          },
+          {
+            id: "blog",
+            name: "Blog",
+            description:
+              "A blog created with SSR to meet SEO requirements. It was possible to post content within an administrative area in the system itself.",
+          },
+          {
+            id: "designSystem",
+            name: "Design System",
+            description:
+              "A project where a set of NPM packages was created to provide various visual resources for the company's frontend applications. It was developed only with JavaScript and TypeScript to increase compatibility with multiple frameworks.",
+          },
+          {
+            id: "admin",
+            name: "Administrative System",
+            description:
+              "Complete administrative system that managed both the company and the company's clients. It includes various reports with exports, user management, configuration of functionalities, and internal use tools.",
+          },
+        ],
+      },
+    },
   },
   ["pt-BR"]: {
     homepage: {
@@ -248,6 +293,51 @@ export const dictionary = {
               "Suporte e resolução de tickets de múltiplos sistemas",
               "Desenvolvimento de ferramentas internas com AngularJS",
             ],
+          },
+        ],
+      },
+    },
+    projects: {
+      main: {
+        title: "Construindo Soluções",
+        description:
+          "Como um desenvolvedor apaixonado e visionário, eu gosto de me envolver em projetos empolgantes e transformar ideias em realidade. Minha abordagem vai além do básico – sou comprometido em encontrar maneiras de aprimorar experiências e colaborar com outros para dar vida a conceitos inovadores e diferentes.  Meu kit de ferramentas é diversificado e eu aproveitei dessa variedade de tecnologias para enfrentar diversos projetos, sempre buscando oferecer grande valor à empresa e aos clientes. Seja por meio de experiência prática ou implementações pioneiras, trago uma perspectiva dinâmica a cada empreendimento. Nos projetos abaixo, mostrarei como utilizei minhas habilidades para criar soluções significativas e contribuir para as empresas nas quais trabalhei.",
+        quote:
+          "Existem mais projetos em que trabalhei no passado, mas infelizmente não podem ser linkados ou mostrados aqui, devido às políticas da empresa ou simplesmente porque não estão mais online.",
+      },
+      timeline: {
+        title: "Projetos",
+        galleryAlt: "Ver screenshots",
+        projects: [
+          {
+            id: "dashboard",
+            name: "Dashboard Administrativo",
+            description:
+              "Um módulo criado para mostrar diversos dados de uma das funcionalidade da empresa. Múltiplos gráficos interativos com filtros e exportação via imagem ou pdf.",
+          },
+          {
+            id: "newAdmin",
+            name: "Sistema Administrativo",
+            description:
+              "Um sistema completo para clientes administrarem suas empresas dentro da plataforma, construído com arquitetura de microfrontends, o sistema atendia milhares de empresas permitindo múltiplas configurações e visualização de dados.",
+          },
+          {
+            id: "blog",
+            name: "Blog",
+            description:
+              "Um blog criado com SSR para atender as requerimentos de SEO. Era possível postar conteúdos dentro de uma área administrativa no próprio sistema.",
+          },
+          {
+            id: "designSystem",
+            name: "Design System",
+            description:
+              "Projeto aonde foi criado um conjunto de pacotes NPM para prover diversos recursos visuais para as aplicações frontend da empresa. Foi desenvolvido apenas com Javascript e Typescript, a fim de aumentar a compatibilidade com múltiplos frameworks",
+          },
+          {
+            id: "admin",
+            name: "Sistema Administrativo",
+            description:
+              "Sistema administrativo completo que gerenciava tanto a empresa, quanto os clientes da empresa. Possui diversos relatórios com exportações, gerenciamento de usuários, configuração de funcionalidades e ferramentas de uso interno.",
           },
         ],
       },
