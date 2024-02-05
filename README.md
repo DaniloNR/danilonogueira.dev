@@ -1,16 +1,16 @@
-## My Personal Page
+## 👨🏻‍💻 My Personal Page
 
 This page was built to highlight my career as a Software Engineer and projects that I have built.
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDaniloNR%2Fdanilonogueira.dev)
 
-## 🧩 Stack
+## 🔧 Stack
 
 - **Front-end:** [Next.js](https://nextjs.org/)
 - **Styles:** [Sass](https://sass-lang.com)
 - **Deployment:** [Vercel](https://vercel.com/)
 
-## Getting Started
+## 💪🏻 Getting Started
 
 1. Clone this repo:
 
