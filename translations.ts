@@ -186,6 +186,7 @@ export const dictionary = {
       projects: "Projects",
       about: "About",
     },
+    footer: "All rights reserved",
   },
   ["pt-BR"]: {
     homepage: {
@@ -374,5 +375,6 @@ export const dictionary = {
       projects: "Projetos",
       about: "Sobre",
     },
+    footer: "Todos os direitos reservados",
   },
 };

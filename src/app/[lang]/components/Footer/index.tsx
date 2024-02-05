@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { Locale } from "@/../i18n-config";
 import { Noto_Sans } from "next/font/google";
 import styles from "./styles.module.scss";
+import { Locale } from "@/../i18n-config";
+import { dictionary } from "@/../translations";
 import {
   Envelope,
   GithubLogo,
@@ -41,6 +42,8 @@ const links = [
 ];
 
 export function Footer({ lang }: FooterProps) {
+  const t = dictionary[lang];
+
   return (
     <footer className={styles.footer}>
       <Link href="/" lang={lang} hrefLang={lang}>
@@ -48,7 +51,9 @@ export function Footer({ lang }: FooterProps) {
           <span className={NotoSans.className}>Danilo</span>
           <span className={NotoSans.className}>Nogueira</span>
         </div>
-        <small>© 2023. All rights reserved</small>
+        <small>
+          © {new Date().getFullYear()}. {t.footer}
+        </small>
       </Link>
 
       <ul>
