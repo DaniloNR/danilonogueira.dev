@@ -5,6 +5,7 @@ import { Locale } from "@/../i18n-config";
 import "./globals.scss";
 import { dictionary } from "@/../translations";
 import { Footer } from "./components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const RobotoMono = Roboto_Mono({
   subsets: ["latin"],
