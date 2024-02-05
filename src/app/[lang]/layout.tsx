@@ -33,6 +33,7 @@ export default function RootLayout({ children, params }: RootProps) {
         <Header lang={params.lang} />
         {children}
         <Footer lang={params.lang} />
+        <SpeedInsights />
       </body>
     </html>
   );
