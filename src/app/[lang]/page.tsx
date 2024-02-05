@@ -134,6 +134,8 @@ export default async function Home({ params: { lang } }: HomeProps) {
                 height={768}
                 sizes="100vw"
                 priority
+                placeholder="blur"
+                blurDataURL="/img/profile_low.png"
               />
             </div>
             {technologies.map(({ src, alt, width, height }, index) => {
