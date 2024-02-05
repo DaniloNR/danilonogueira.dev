@@ -170,6 +170,16 @@ export const dictionary = {
         ],
       },
     },
+    about: {
+      main: {
+        title: "About me",
+        intro:
+          "Olá! I'm Danilo Nogueira, a Brazilian frontend developer with over 5 years of hands-on experience in crafting all sorts of awesome web applications.",
+        main: "Ever since I can remember, I've always felt excited about discovering new technologies and solving complex problems with them. This passion led me to enroll in a computer science degree where I learned how the tech I used every day really worked. During college, I had an amazing experience being selected for a program called 'Science Without Borders', which sponsored me to study at the University of Toronto as an exchange student for 16 months. I learned a lot during my time there and secured my first web development part-time job when I returned to Brazil. That's when things really took off for me, and I discovered my passion for developing software and putting my problem-solving skills to the test.",
+        conclusion:
+          "Outside the coding realm, you'll find me indulging in my love for gaming, strumming my guitar to unwind, hitting the gym for a good workout, and exploring new corners of the world through travel. Born and raised in Brazil, I harbor a deep desire to live and work beyond my home country, fueled by a passion for diverse cultures and challenges that push my professional boundaries.",
+      },
+    },
   },
   ["pt-BR"]: {
     homepage: {
@@ -340,6 +350,16 @@ export const dictionary = {
               "Sistema administrativo completo que gerenciava tanto a empresa, quanto os clientes da empresa. Possui diversos relatórios com exportações, gerenciamento de usuários, configuração de funcionalidades e ferramentas de uso interno.",
           },
         ],
+      },
+    },
+    about: {
+      main: {
+        title: "Sobre mim",
+        intro:
+          "Hello! Eu sou Danilo Nogueira, um desenvolvedor frontend brasileiro com mais de 5 anos de experiência prática na criação de diversos tipos de aplicações web incríveis.",
+        main: "Desde que me lembro, sempre senti empolgação em descobrir novas tecnologias e resolver problemas complexos com elas, o que me levou cursar ciência da computação, onde descobri como a tecnologia que eu usava todos os dias realmente funcionava. Durante a faculdade, tive uma experiência incrível sendo selecionado para um programa chamado 'Ciência sem Fronteiras', que me patrocinou para estudar na Universidade de Toronto como estudante de intercâmbio por 16 meses. Aprendi muito durante esse período e consegui meu primeiro emprego de desenvolvimento web de meio período quando retornei ao Brasil, e foi aí que as coisas realmente decolaram para mim. Encontrei minha paixão desenvolvendo software e colocando minhas habilidades de resolução de problemas à prova.",
+        conclusion:
+          "Fora do mundo do código, você vai me encontrar curtindo meu amor por games, tocando minha guitarra para relaxar, indo treinar na academia e explorando novos cantos do mundo viajando. Nascido e criado no Brasil, tenho um profundo desejo de viver e trabalhar além das fronteiras do meu país natal, alimentado por uma paixão por culturas diversas e desafios que ampliam meus limites profissionais.",
       },
     },
   },
