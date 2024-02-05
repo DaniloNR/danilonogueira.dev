@@ -180,6 +180,12 @@ export const dictionary = {
           "Outside the coding realm, you'll find me indulging in my love for gaming, strumming my guitar to unwind, hitting the gym for a good workout, and exploring new corners of the world through travel. Born and raised in Brazil, I harbor a deep desire to live and work beyond my home country, fueled by a passion for diverse cultures and challenges that push my professional boundaries.",
       },
     },
+    navigation: {
+      home: "Home",
+      career: "Career",
+      projects: "Projects",
+      about: "About",
+    },
   },
   ["pt-BR"]: {
     homepage: {
@@ -361,6 +367,12 @@ export const dictionary = {
         conclusion:
           "Fora do mundo do código, você vai me encontrar curtindo meu amor por games, tocando minha guitarra para relaxar, indo treinar na academia e explorando novos cantos do mundo viajando. Nascido e criado no Brasil, tenho um profundo desejo de viver e trabalhar além das fronteiras do meu país natal, alimentado por uma paixão por culturas diversas e desafios que ampliam meus limites profissionais.",
       },
+    },
+    navigation: {
+      home: "Home",
+      career: "Carreira",
+      projects: "Projetos",
+      about: "Sobre",
     },
   },
 };

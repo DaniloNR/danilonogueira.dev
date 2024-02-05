@@ -2,9 +2,10 @@ import Link from "next/link";
 import LocaleSwitcher from "../LocaleSwitcher";
 import styles from "@/app/[lang]/components/Header/styles.module.scss";
 import { ThemeSelector } from "../ThemeSelector";
-import { Locale } from "@/../i18n-config";
 import { Noto_Sans } from "next/font/google";
 import { Navigation, NavigationLinks } from "../Navigation";
+import { Locale } from "@/../i18n-config";
+import { dictionary } from "@/../translations";
 
 const NotoSans = Noto_Sans({ weight: ["300", "500"], subsets: ["latin"] });
 
@@ -13,21 +14,23 @@ type HeaderProps = {
 };
 
 export function Header({ lang }: HeaderProps) {
+  const t = dictionary[lang];
+
   const navLinks: NavigationLinks[] = [
     {
-      name: "Home",
+      name: t.navigation.home,
       href: "/",
     },
     {
-      name: "Career",
+      name: t.navigation.career,
       href: "/career",
     },
     {
-      name: "Projects",
+      name: t.navigation.projects,
       href: "/projects",
     },
     {
-      name: "About",
+      name: t.navigation.about,
       href: "/about",
     },
   ];
