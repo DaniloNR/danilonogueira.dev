@@ -19,10 +19,10 @@ describe("Header component", () => {
     render(<Navigation navLinks={links} lang={"en-US"} />);
 
     // Act
-    const home = screen.getByText("Home");
+    const link = screen.getByRole("link");
 
     // Assert
-    expect(home).toHaveClass("link--active");
+    expect(link).toHaveClass("link--active");
   });
 
   it("Renders a different active link when route changes", () => {
@@ -41,8 +41,7 @@ describe("Header component", () => {
     render(<Navigation navLinks={links} lang={"en-US"} />);
 
     // Act
-    const home = screen.getByText("Home");
-    const career = screen.getByText("Career");
+    const [home, career] = screen.getAllByRole("link");
 
     // Assert
     expect(home).not.toHaveClass("link--active");
