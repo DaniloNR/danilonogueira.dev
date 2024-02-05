@@ -6,6 +6,7 @@ import "./globals.scss";
 import { dictionary } from "@/../translations";
 import { Footer } from "./components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const RobotoMono = Roboto_Mono({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({ children, params }: RootProps) {
         {children}
         <Footer lang={params.lang} />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
