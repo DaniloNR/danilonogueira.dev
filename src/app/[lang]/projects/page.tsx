@@ -50,6 +50,7 @@ const gallery: Projects = {
       "JavaScript",
       "TypeScript",
       "VueJs",
+      "ReactJs",
       "Webpack",
       "SingleSpa",
       "Jest",

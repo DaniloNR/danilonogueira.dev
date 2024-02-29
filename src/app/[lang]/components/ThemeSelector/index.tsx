@@ -24,7 +24,7 @@ function getDefaultTheme() {
 }
 
 export function ThemeSelector({ lang }: { lang: Locale }) {
-  const [theme, setTheme] = useState<ThemeTypes>(getDefaultTheme);
+  const [theme, setTheme] = useState<ThemeTypes>("DARK_THEME");
 
   const t = dictionary[lang];
 

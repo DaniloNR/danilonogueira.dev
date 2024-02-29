@@ -1,7 +1,7 @@
 export const dictionary = {
   ["en-US"]: {
     homepage: {
-      label: "Front-End Developer",
+      label: "Software Developer",
       heading: "Code, Creativity and Collaboration",
       message:
         "I love creating quality-driven web applications, delivering seamless user experiences, while solving complex challenges.",
@@ -190,7 +190,7 @@ export const dictionary = {
   },
   ["pt-BR"]: {
     homepage: {
-      label: "Desenvolvedor Front-End",
+      label: "Desenvolvedor de Software",
       heading: "Código, Criatividade e Colaboração",
       message:
         "Adoro criar aplicações web com foco em qualidade, proporcionando uma excelente experiência de usuário e, ao mesmo tempo, resolvendo desafios complexos.",

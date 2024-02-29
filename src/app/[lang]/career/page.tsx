@@ -12,6 +12,13 @@ type CareerProps = {
 export default function Career({ params: { lang } }: CareerProps) {
   const t = dictionary[lang];
 
+  function getResumeURL(lang: Locale) {
+    if (lang === "pt-BR") {
+      return "/files/Currículo Danilo Nogueira.pdf";
+    }
+    return "/files/Danilo Nogueira Resume.pdf";
+  }
+
   return (
     <main className={styles.career}>
       <section>
@@ -20,7 +27,7 @@ export default function Career({ params: { lang } }: CareerProps) {
       </section>
       <section>
         <h3>{t.career.timeline.title}</h3>
-        <a href="/files/Danilo Nogueira Resume.pdf" download>
+        <a href={getResumeURL(lang)} download>
           <Download size="1.5rem" color="currentcolor" />
           {t.career.timeline.download}
         </a>
